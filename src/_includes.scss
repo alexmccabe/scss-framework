@@ -1,3 +1,25 @@
-// Import configuration
+/* ==========================================================================
+   #INCLUDES
+========================================================================== */
 
-// Import Tools (mixins and functions)
+/**
+* This file SHOULD NOT output CSS. It is for including in JS Framework (React,
+* Vue) SCSS files, to provide access to all the variables and functionality.
+*/
+
+/* 1. Import Configuration Files (No outputput CSS)
+========================================================================== */
+@import '1-config/global';
+@import '1-config/breakpoints';
+@import '1-config/colors';
+@import '1-config/typography';
+@import '1-config/grid';
+
+/* 2. Import Tools (Functions, Mixins, etc) (No outputput CSS)
+========================================================================== */
+@import '2-tools/functions/remove-unit';
+@import '2-tools/functions/kerning';
+@import '2-tools/functions/unit-conversion';
+
+@import '2-tools/mixins/breakpoint';
+@import '2-tools/mixins/poly-fluid-sizing';
