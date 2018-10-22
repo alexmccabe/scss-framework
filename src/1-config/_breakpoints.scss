@@ -1,0 +1,29 @@
+/* ==========================================================================
+   #BREAKPOINTS-CONFIG
+========================================================================== */
+
+/**
+* Define the site breakpoints here. Use this to set the most common breakpoints
+* in the site / app. Any additional breakpoints can be create ad-hoc in the scss
+* file when needed.
+*/
+
+$breakpoints: (
+    zero: 0,
+    min: $site-min-width,
+    x-small: 25em,
+    small: 37.5em,
+    medium: 50em,
+    large: 64em,
+    x-large: 70em,
+    max: $site-max-width
+);
+
+/**
+ * If set to true, the width of the container will be set to the exact
+ * breakpoint width at each breakpoint. If set to false, the container will
+ * be 100% width all the way up to maximum. This gives you the option of having
+ * a completely fluid layout, if you want.
+ * @type {Boolean}
+ */
+$snap-to-breakpoints: false;

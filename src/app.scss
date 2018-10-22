@@ -1,14 +1,41 @@
-// Import Vendor styles
+/* ==========================================================================
+   #APP
+========================================================================== */
 
-// Import configuration
+/**
+* Import all your SCSS files here. This is the entry point for all SCSS and
+* also the output CSS.
+*/
 
-// Import Tools (mixins and functions)
+/* 0. Import Vendor Styles
+========================================================================== */
 
-// Import Generic styles
+/* 1. Import Configuration Files (No outputput CSS)
+========================================================================== */
+@import '1-config/global';
+@import '1-config/breakpoints';
+@import '1-config/colors';
+@import '1-config/typography';
+@import '1-config/grid';
+
+/* 2. Import Tools (Functions, Mixins, etc) (No outputput CSS)
+========================================================================== */
+@import '2-tools/functions/remove-unit';
+@import '2-tools/functions/kerning';
+@import '2-tools/functions/unit-conversion';
+
+/* 3. Import any Generic Styling (Reset, etc)
+========================================================================== */
 @import '3-generic/reset';
 
-// Import Base Element styles
+/* 4. Import Base Styles
+========================================================================== */
+@import '4-elements/global';
+@import '4-elements/typography';
 
-// Import Global Components
+/* 5. Import Global Components (May not be used in React or Vue)
+========================================================================== */
 
-// Import Utilities
+/* 6. Import Utility Styling (Overrides everything else)
+========================================================================== */
+@import '6-utils/u-font';

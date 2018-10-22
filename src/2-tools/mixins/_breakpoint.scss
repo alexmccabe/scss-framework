@@ -1,0 +1,57 @@
+/* ==========================================================================
+   #BREAKPOINT-MIXIN
+========================================================================== */
+
+/**
+* The breakpoint mixin allows you to easily create a breakpoint without having
+* to remember the specific syntax for media queries. It accepts both a value
+* with a unit (px, em, etc) or a key to a breakpoint in the $breakpoints map.
+* You can find the breakpoints map in `1-config/_breakpoints.scss`.
+*
+* Usage
+* -------------------------
+* .selector {
+*   @include breakpoint(320px) {...}
+* }
+*
+* .selector {
+*   @include breakpoint(320px, 550px) {...}
+* }
+*
+* 1. Check if the points provided are available in the $breakpoints map
+* 2. Prevent overlapping media queries when using em units
+*/
+
+@mixin breakpoint($point-min, $point-max: 0) {
+    /* [1] */
+    @if map-has-key($breakpoints, $point-min) {
+        $point-min: map-get($breakpoints, $point-min);
+    }
+
+    /* [1] */
+    @if map-has-key($breakpoints, $point-max) {
+        $point-max: map-get($breakpoints, $point-max);
+    }
+
+    $min-unit: unit($point-min);
+    $max-unit: unit($point-max);
+
+    @if $min-unit == '%' or $max-unit == '%' {
+        @error 'You cannot use percentage units for breakpoint definitions.';
+    }
+
+    /* [2] */
+    @if $point-max > 0 and $max-unit == 'em' {
+        $point-max: $point-max - pxtoem(1);
+    }
+
+    @if $point-max > 0 {
+        @media (min-width: $point-min) and (max-width: $point-max) {
+            @content;
+        }
+    } @else {
+        @media (min-width: $point-min) {
+            @content;
+        }
+    }
+}
