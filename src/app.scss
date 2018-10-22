@@ -24,6 +24,9 @@
 @import '2-tools/functions/kerning';
 @import '2-tools/functions/unit-conversion';
 
+@import '2-tools/mixins/breakpoint';
+@import '2-tools/mixins/poly-fluid-sizing';
+
 /* 3. Import any Generic Styling (Reset, etc)
 ========================================================================== */
 @import '3-generic/reset';
