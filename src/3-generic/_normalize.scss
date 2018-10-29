@@ -1,0 +1,12 @@
+/* ==========================================================================
+   #NORMALIZE
+========================================================================== */
+
+/**
+* Normalize is generated using Post-CSS and .browserslistrc to use only what
+* is needed from normalize-css.
+*/
+
+@if ($dynamic-normalize) {
+    @import-normalize;
+}
