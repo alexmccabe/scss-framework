@@ -25,4 +25,13 @@ const buildCss = done => {
     .pipe(gulp.dest(paths.styles.dest));
 };
 
+const generateCssNormalize = done => {
+  return gulp
+    .src('src/3-generic/_dynamic-normalize.scss')
+    .pipe(plugins.postcss([postcssNormalize(), autoprefixer()]))
+    .pipe(plugins.rename('_generated-normalize.scss'))
+    .pipe(gulp.dest('src/3-generic'));
+};
+
 gulp.task('default', buildCss);
+gulp.task('generate:normalize', generateCssNormalize);

@@ -1,6 +1,6 @@
 {
   "author": "Alex McCabe",
-  "name": "scss-framework",
+  "name": "@alexwmccabe/scss-framework",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
